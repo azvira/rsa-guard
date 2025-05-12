@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>SafePass — Хранение паролей</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <main class="main-content">
+        <header>
+            <div class="logo">SafePass</div>
+        </header>
+
+        <div class="page-title">Моё хранилище</div>
+
+    </main>
+
+    <!-- Кнопка -->
+    <div class="page-title">
+        <button class="btn-create" onclick="openModal()">
+            <span class="plus-icon">+</span> Создать новую
+        </button>
+    </div>
+
+    <div id="services-list" class="services-list">
+  <!-- Здесь будут появляться сервисы -->
+    </div>
+
+
+<!-- Модальное окно -->
+    <div id="modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 9999;">
+        <div id="modal-content" style="background: white; padding: 2rem; border-radius: 10px; min-width: 300px; min-height: 200px;">
+            <div class="new-entry-form">
+                <h2>Новый пароль</h2>
+                <form onsubmit="return false;">
+                    <label for="service-name">Название сервиса</label>
+                    <input type="text" id="service-name" name="service-name" placeholder="Введите название">
+
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль">
+
+                    <label for="secret-word">Секретное слово</label>
+                    <input type="text" id="secret-word" name="secret-word" placeholder="Введите секретное слово"><br><br>
+
+                    <div class="form-actions">
+                        <button type="submit" class="save-btn">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Второе модальное окно для просмотра -->
+<div id="view-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 9999;">
+    <div id="view-modal-content" style="background: white; padding: 2rem; border-radius: 10px; min-width: 300px; min-height: 150px;">
+        <h2 id="modal-service-name" style="color: var(--secondary); text-align: center; margin-top: 0;">[Название сервиса]</h2>
+
+        <div class="view-form">
+            <label for="check-secret">Секретное слово</label>
+            <input type="text" id="check-secret" name="check-secret" placeholder="Введите секретное слово">
+
+            <div class="form-actions" style="margin: 0.5rem 0 1rem 0; justify-content: flex-end;">
+                <button class="check-btn" id="check-btn">Проверить</button>
+            </div>
+
+            <label for="decrypted-password">Пароль</label>
+            <input type="text" id="decrypted-password" name="decrypted-password" readonly placeholder="••••••••">
+
+            <div class="form-actions">
+                <button class="delete-btn" id="delete-btn">Удалить</button>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+    <script src="modal-wind.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>

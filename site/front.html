@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <title>SafePass — Хранение паролей</title>
+
+    <style>
+        :root{
+            --accent: #3BD9A1; /* Основной цвет (мятный) - для кнопок логотипа и для основных кнопок */
+            --accent-dark: #2ab98c; /* Тот же цвет, но чуть темнее — для наведения */
+            --secondary: #3065F2; /* Синий цвет - используется в заголовках карточек */
+            --text: #333333; /* Основной цвет текста (тёмно-серый, почти чёрный) */
+            --text-light: #666666; /* Светло-серый — для описаний, менее важного текста */
+            --bg: #FFFFFF; /* Основной фон — белый */
+            --bg-muted: #F4F8FA; /* Фон для больших блоков (как hero) — светло-серый */
+        }
+
+        body {
+            margin: 0;
+            font-family: "Outfit KS", Overpass, "Helvetica Neue", Helvetica, serif;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            background-color: var(--bg);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem; /* Размер текста логотипа */
+            font-weight: bold; /* Жирный шрифт */
+            color: var(--accent); /* Цвет логотипа — мятный */
+        }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-dark); /* При наведении фон кнопки темнеет */
+        }
+
+        .hero {
+            background-color: var(--bg-muted);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+                            
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem; /*расстояние между блоками*/
+            padding: 3rem 2rem;
+            flex-wrap: wrap; /*Позволяет карточкам переноситься на новую строку, если они не влезают в одну строку*/
+        }
+
+        .feature-card {
+            background-color: var(--bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            width: 280px;
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            color:var(--secondary);
+            margin-bottom: 1rem;
+        }
+        footer {
+            background: var(--text);
+            color: var(--bg);
+            text-align: center;
+            padding: 2rem;
+            position: fixed;       /* фиксируем элемент */
+            bottom: 0;             /* прижимаем к нижнему краю */
+            left: 0;
+            width: 100%;           /* растягиваем по всей ширине */
+            z-index: 1000;         /* чтобы был поверх всего */
+        }
+
+
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="logo">SafePass</div>
+</header>
+
+<section class="hero">
+    <h1>Надёжное хранение ваших паролей</h1>
+    <p>Безопасно. Просто. Всегда под рукой.</p>
+    <button class="btn" onclick="window.location.href='app.html'">Начать пользоваться</button>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>RSA шифрование</h3>
+        <p>Ваши пароли надёжно зашифрованы алгоритмами мирового уровня.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Секретные фразы</h3>
+      <p>Создайте уникальную ключ-фразу для каждого сайта.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Шифрование end-to-end</h3>
+      <p>Только вы можете расшифровать свои данные.</p>
+    </div>
+</section>
+<footer>
+    © 2025 SafePass. Все права защищены.
+  </footer>
+</body>
+</html>
